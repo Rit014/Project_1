@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: sans-serif;
+   background-color: rgb(233, 211, 140);
+}
+
+.book{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.paper{
+    position: absolute; /* the reason why use the absolute position for the paper is because when we add more papers to our book we want to papers to overlap one in fron of another*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front, 
+.back{
+    background-color: rgb(141, 75, 75);
+    position: absolute; /* because we want front page to be on top of the back page however*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid black;
+}
+
+.img1{
+    width:100%;
+    height: 100%;
+    /* mix-blend-mode: color-burn; */
+}
+
+.img2{
+    width: 100%;
+    height: 100%;
+}
+
+.back{
+    z-index: 0;
+}
+
+.front-content, 
+.back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-content{
+    font-family: "Madimi One", sans-serif;
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+/* Paper flip effect */
+
+.flipped .front, .flipped .back{
+    transform: rotateY(-180deg);
+}
+
+/* Buttons */
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover i{
+    color: #636363;
+}
+
+i{
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+
+#p1{
+    z-index: 3;
+}
+#p2{
+    z-index: 2;
+}
+#p3{
+    z-index: 1;
+}

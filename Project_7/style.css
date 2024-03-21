@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.outer-wrapper{
+    background: rgb(118, 118, 139);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-wrapper{
+    width: 350px;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.inner-wrapper .offline{
+    color: white;
+}
+
+.inner-wrapper .icon{
+    background-color: green;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.inner-wrapper .cross{
+    background-color: transparent
+}
+
+.inner-wrapper .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 25px;
+}
+
+.inner-wrapper .content span{
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.inner-wrapper .content p{
+    font-weight: 300;
+    color: rgb(197, 191, 191);
+}
+
+.fa-wifi, .fa-circle-xmark{
+    font-size: 25px;
+}
+
